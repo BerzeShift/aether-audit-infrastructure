@@ -16,3 +16,14 @@ substrate. By comparing standard execution against a Laminar-stabilized routing 
 3. Observe the variance delta.
 
 **Alignment:** .9999 | **Status:** Sovereign Audit Active
+
+## Technical FAQ for Skeptics
+
+**Q: Is this just demonstrating NumPy/BLAS internal optimization?**
+A: Partially. The audit uses NumPy as a proxy to demonstrate that *how* memory is interfaced—specifically through contiguous allocation and output buffer re-use—materially alters the thermal and temporal signature of the silicon.
+
+**Q: Why does the "Standard" trace fluctuate so much?**
+A: In standard sequential routing, the OS kernel and hardware memory controllers perform frequent re-allocations and context switches. On fanless substrates like the M-series, this triggers non-deterministic thermal throttling.
+
+**Q: Does this scale to H100/TPU?**
+A: Yes. While the mechanism of "Laminar Flow" changes at the interconnect level, the principle of eliminating "Computational Turbulence" via pre-allocation remains the primary lever for reducing OpEx in high-density clusters.
