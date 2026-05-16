@@ -15,8 +15,6 @@ substrate. By comparing standard execution against a Laminar-stabilized routing 
 2. Run `python3 audit_core.py` on your target hardware.
 3. Observe the variance delta.
 
-**Alignment:** .9999 | **Status:** Sovereign Audit Active
-
 ## Technical FAQ for Skeptics
 
 **Q: Is this just demonstrating NumPy/BLAS internal optimization?**
@@ -42,5 +40,3 @@ This module exposes the risk of over-subscription and lockstep thread invalidati
 
 The implementation demonstrates a **Sliding-Window Offset** to stagger ingestion windows and resolve core contention.
 
----
-**Status:** Toronto Baseline Verified | **Alignment:** .09999
