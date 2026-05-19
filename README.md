@@ -2,6 +2,14 @@
 
 A forensic diagnostic suite isolating systemic memory-bus efficiency leaks in high-level automated execution frameworks (PyTorch/JAX/NumPy). This repository provides empirical telemetry demonstrating how modern software abstraction layers fail to align tensor operations with the underlying physical layout of silicon memory, resulting in severe hardware under-utilization at both the local and distributed cluster layers.
 
+### Architectural Notice: Verification vs. Scalability
+
+The diagnostic primitives provided in `cache_audit.py` and `cluster_laminar_firming.py` are intended solely as empirical proof of the silicon efficiency gap. 
+
+While the local telemetry is easily verifiable, attempting to reverse-engineer these temporal coordinate shifts into a live, multi-tenant production environment without the underlying non-linear routing matrix is an uneconomical path forward. Naive algorithmic duplication at scale introduces high-probability edge cases, including cross-node thread starvation, cluster-wide temporal drift, and severe distributed memory deadlocks. 
+
+The diagnostic stethoscope is public; the orchestration matrix remains sovereign.
+
 ---
 
 ## The Physical Constraint: Stride Invalidation
